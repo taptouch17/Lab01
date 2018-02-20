@@ -7,9 +7,34 @@
 //
 
 #include <iostream>
+#include "Queue.h"
 
-int main(int argc, const char * argv[]) {
+using namespace std;
+
+int main() {
     // insert code here...
-    std::cout << "Hello, World!\n";
+    cout << "Hello, World!\n";
+    
+    //List* list = new List();
+    Queue q;
+    
+    q.enqueue(1999, "Thomas", "Grant", 3.2);
+    q.enqueue(1001, "Jelani", "Nicholls", 5.0);
+    q.enqueue(1919, "ME", "ME", 4.0);
+    q.searchQueue(1919, "ME", "ME", 4.0);
+    //q.dequeue();
+    q.displayQueue();
+    
+    //list->addTail(1999, "Thomas", "Grant", 3.2);
+    //list->addTail(1001, "Annette", "Grey", 2.2);
+    //list->addTail(1875, "Steve", "Alonzo", 3.0);
+    //list->addTail(1555, "Jean", "Steele", 1.8);
+    
+    cout << "\nDisplay List:\n";
+    //cout << list->displayList() << "\n";
+    
+    cout << "\nDisplay Names:\n";
+    //cout << list->displayNames() << "\n";
+    
     return 0;
 }
