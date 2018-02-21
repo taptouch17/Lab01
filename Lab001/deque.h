@@ -59,7 +59,7 @@ string deque::end() {
 
 void deque::push_back(int number, string first, string last, float score) {
     if (deque.size() == 0) {
-        deque.createABackNode(number, first, last, score);
+        deque.createANode(number, first, last, score);
         return;
     }
     deque.addAtBack(number, first, last, score);

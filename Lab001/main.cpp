@@ -38,7 +38,7 @@ int main() {
     DQ.push_back(1999, "Thomas", "Grant", 3.2);
     DQ.push_back(1919, "ME", "ME", 4.0);
     DQ.push_front(1001, "Jelani", "Nicholls", 5.0);
-    DQ.pop_front();
+    DQ.pop_back();
     //DQ.insert(50, "Yer", "Mom", 1.5, 2);
     DQ.begin();
     DQ.end();

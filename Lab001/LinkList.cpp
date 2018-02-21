@@ -133,7 +133,7 @@ void LinkList::deleteAtBack() {
     while (cur -> getNextPtr() != NULL) {
         cur = next -> getNextPtr();
         next = next -> getNextPtr();
-        back = cur -> getNextPtr();
+        back = cur;
         theString = next -> getRecord();
     }
     
