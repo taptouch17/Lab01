@@ -16,6 +16,7 @@ using namespace std;
 
 
 
+// Done
 void LinkList::addAtFront(int number, string first, string last, float score) {
 
     
@@ -27,13 +28,13 @@ void LinkList::addAtFront(int number, string first, string last, float score) {
 }
 
 
-
+// Done
 void LinkList::createANode(int number, string first, string last, float score) {
     Node *tmp = new Node(number, first, last, score);
     
     
     if (front == NULL) {
-        front = tmp;
+        front = back = tmp;
         front -> setNextPtr(nullptr);
     }
     else {
@@ -44,6 +45,7 @@ void LinkList::createANode(int number, string first, string last, float score) {
     num_elements++;
 }
 
+/*
 void LinkList::createABackNode(int number, string first, string last, float score) {
     Node *tmp = new Node(number, first, last, score);
     
@@ -57,6 +59,7 @@ void LinkList::createABackNode(int number, string first, string last, float scor
         back = tmp;
     }
 }
+*/
 
 void LinkList::insertAtPosition(int number, string first, string last, float score, int atPos) {
     Node *tmp = new Node(number, first, last, score);
@@ -75,14 +78,15 @@ void LinkList::insertAtPosition(int number, string first, string last, float sco
         
         if (atPos == i) {
             cur = next;
-            next -> getNextPtr();
+            next = next -> getNextPtr();
             cur -> setNextPtr(tmp);
             tmp -> setNextPtr(next);
             
         }
-        next = next -> getNextPtr();
+
+        //next = next -> getNextPtr();
     }
-    
+    num_elements++;
 }
 
 void LinkList::addAtBack(int number, string first, string last, float score) {
@@ -125,21 +129,16 @@ void LinkList::deleteAtBack() {
         throw out_of_range("out of range");
         
     }
-    string theString = " ";
-    Node *cur = front;
-    Node *next = front -> getNextPtr();
-    
-    
-    while (cur -> getNextPtr() != NULL) {
-        cur = next -> getNextPtr();
-        next = next -> getNextPtr();
-        back = cur;
-        theString = next -> getRecord();
+    Node *tmp = new Node();
+    Node *s = front;
+    while (s->getNextPtr() != NULL) {
+        tmp = s;
+        s = s -> getNextPtr();
     }
+    back = tmp;
+    tmp -> setNextPtr(nullptr);
+    free(s);
     
-    free(next);
-    
-   cur -> setNextPtr(nullptr);
     
     
     

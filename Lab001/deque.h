@@ -23,6 +23,7 @@ public:
     int Size();
     string begin();
     string end();
+    string display();
     void push_back(int number, string first, string last, float score);
     void push_front(int number, string first, string last, float score);
     void pop_front();
@@ -44,6 +45,7 @@ bool deque::isEmpty() {
 }
 
 int deque::Size() {
+    cout << "the size is " << deque.size() << endl;
     return deque.size();
 }
 
@@ -82,7 +84,12 @@ void deque::pop_back() {
 }
 
 void deque::insert(int number, string first, string last, float score, int atPos) {
+    deque.insertAtPosition(number, first, last, score, atPos);
     
+}
+
+string deque::display() {
+    return deque.displayTheList();
 }
 
 void deque::clear() {

@@ -36,12 +36,16 @@ int main() {
     //q.dequeue();
     //q.displayQueue();
     DQ.push_back(1999, "Thomas", "Grant", 3.2);
+    DQ.push_back(1999, "A", "Grant", 3.2);
     DQ.push_back(1919, "ME", "ME", 4.0);
     DQ.push_front(1001, "Jelani", "Nicholls", 5.0);
+    DQ.begin();
     DQ.pop_back();
-    //DQ.insert(50, "Yer", "Mom", 1.5, 2);
+    DQ.insert(50, "Yer", "Mom", 1.5, 2);
     DQ.begin();
     DQ.end();
+    DQ.Size();
+    DQ.display();
     
     //list->addTail(1999, "Thomas", "Grant", 3.2);
     //list->addTail(1001, "Annette", "Grey", 2.2);
