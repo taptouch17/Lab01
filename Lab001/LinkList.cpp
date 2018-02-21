@@ -21,7 +21,7 @@ void LinkList::addAtFront(int number, string first, string last, float score) {
     
     
     Node* tmp = new Node(number, first, last, score);
-    front->setNextPtr(tmp);
+    tmp -> setNextPtr(front);
     front = tmp;
     num_elements++;
 }
@@ -120,6 +120,52 @@ void LinkList::deleteAtFront() {
     
 }
 
+void LinkList::deleteAtBack() {
+    if (back == NULL) {
+        throw out_of_range("out of range");
+        
+    }
+    string theString = " ";
+    Node *cur = front;
+    Node *next = front -> getNextPtr();
+    
+    
+    while (cur -> getNextPtr() != NULL) {
+        cur = next -> getNextPtr();
+        next = next -> getNextPtr();
+        back = cur -> getNextPtr();
+        theString = next -> getRecord();
+    }
+    
+    free(next);
+    
+   cur -> setNextPtr(nullptr);
+    
+    
+    
+    
+    num_elements--;
+}
+
+string LinkList::displayFront() {
+    if (front == NULL) {
+        throw out_of_range("Please add to front of Stack first.");
+    }
+    Node*tmp = new Node;
+    tmp = front;
+    
+    return tmp -> getRecord();
+}
+
+string LinkList::displayBack() {
+    if (back == NULL) {
+        throw out_of_range("Please add to back of Queue first.");
+    }
+    Node *tmp = back;
+    
+    return tmp -> getRecord();
+}
+
 string LinkList::displayTheList() {
     if (front == NULL) {
         cout << "List is Empty";
@@ -161,7 +207,7 @@ void LinkList::searchList(int number, string first, string last, float score) {
     stringstream ss;
     ss << number << ", " << first << " " << last << ", " << score;
     string theStr = ss.str();
-    while (tmp != back) {
+    while (tmp != NULL) {
         
         counter++;
         if (tmp -> getRecord() == theStr) {
@@ -170,13 +216,7 @@ void LinkList::searchList(int number, string first, string last, float score) {
             return;
         }
         tmp = tmp -> getNextPtr();
-        if (tmp -> getRecord() == theStr) {
-            counter++;
-            cout << "Element " << tmp -> getRecord();
-            cout << " found at position " << counter << endl;
-            
-            return;
-        }
+        
         
     }
     

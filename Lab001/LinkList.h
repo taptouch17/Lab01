@@ -27,7 +27,10 @@ public:
     void addAtBack(int number, string first, string last, float score);
     void addAtFront(int number, string first, string last, float score);
     void insertAtPosition(int number, string first, string last, float score, int atPos);
+    string displayBack();
+    string displayFront();
     void deleteAtFront();
+    void deleteAtBack();
     string displayTheList();
     void searchList(int number, string first, string last, float score);
     

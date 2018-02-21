@@ -31,6 +31,8 @@ public:
     
     string front(); //tells us the element at the front of the list without removing it
     
+    string back(); // tells us the element at the back of the list without removing it
+    
     void clear(); //makes the ADT empty
     
     string displayQueue(); // Displays items in queue
@@ -67,11 +69,28 @@ void Queue::enqueue(int number, string first, string last, float score) {
 
 void Queue::dequeue() {
     
+    
+        Listt.deleteAtFront();
+    
+}
+
+
+string Queue::front() {
+    
+    cout << "The front of the Queue is: " << Listt.displayFront() << endl;
+    return Listt.displayFront();
+}
+
+string Queue::back() {
+    cout << "The front of the Queue is: " << Listt.displayBack() << endl;
+    return Listt.displayBack();
+}
+
+void Queue::clear() {
     while (Listt.size() != 0) {
         Listt.deleteAtFront();
     }
 }
-
 string Queue::displayQueue() {
     cout << "The Queue is " << endl;
     
