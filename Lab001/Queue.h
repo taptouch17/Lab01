@@ -1,10 +1,28 @@
 //
-//  Queue.hpp
+//  Queue.c
 //  Queue
 //
-//  Created by Jelani on 13/11/2017.
-//  Copyright © 2017 Tap. TOUCH. All rights reserved.
+// Copyright © 2018 Tap. TOUCH. All rights reserved.
+// Unauthorized copying, via any medium is strictly prohibited.
+// Unless written consent by the author, you are not allowed to
+// modify, copy, merge, publish, distribute, sublicense, and/or
+// sell copies of this code and/or part of this code.
 //
+/*************************************************************************
+ *
+ * Tap. TOUCH.
+ * __________________
+ *
+ *  [2017] - [2018] Tap. TOUCH.
+ * Created by Jelani on 18/02/2018.
+ *
+ * THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHOR OR COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR
+ * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 
 #ifndef Queue_h
