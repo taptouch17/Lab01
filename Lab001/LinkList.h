@@ -39,8 +39,8 @@ public:
     void PQueue(int number, string first, string last, float score);
     
     LinkList() {
-        front = nullptr;
-        back = nullptr;
+        front = NULL;
+        back = NULL;
         num_elements = 0;
     }
     
@@ -50,5 +50,257 @@ public:
     bool isEmpty();
 };
 
+//===========================================================================//
+//                   Member functions' definition                            //
+//===========================================================================//
 
+// Done
+void LinkList::addAtFront(int number, string first, string last, float score) {
+    
+    
+    
+    Node* tmp = new Node(number, first, last, score);
+    tmp -> setNextPtr(front);
+    front = tmp;
+    num_elements++;
+}
+
+
+// Done
+void LinkList::createANode(int number, string first, string last, float score) {
+    Node *tmp = new Node(number, first, last, score);
+    
+    
+    if (front == NULL) {
+        front = back = tmp;
+        front -> setNextPtr(NULL);
+    }
+    else {
+        tmp -> setNextPtr(front);
+        front = tmp;
+        
+    }
+    num_elements++;
+}
+
+
+void LinkList::insertAtPosition(int number, string first, string last, float score, int atPos) {
+    Node *tmp = new Node(number, first, last, score);
+    if (atPos == -1 || atPos > num_elements) {
+        cout << "Out of range";
+        return;
+    }
+    Node*next = front;
+    Node*cur = new Node;
+    
+    if (atPos == 1) {
+        addAtFront(number, first, last, score);
+        return;
+    }
+    
+    for (int i = 0; i <= num_elements; i++) {
+        
+        if (atPos == i) {
+            cur = next;
+            next = next -> getNextPtr();
+            cur -> setNextPtr(tmp);
+            tmp -> setNextPtr(next);
+            
+        }
+        
+        //next = next -> getNextPtr();
+    }
+    num_elements++;
+}
+
+void LinkList::addAtBack(int number, string first, string last, float score) {
+    if (front == NULL) {
+        cout << "Out of range";
+        return;
+    }
+    
+    
+    Node *tmp = new Node(number, first, last, score);
+    Node *s = front;
+    while (s->getNextPtr() != NULL) {
+        s = s -> getNextPtr();
+    }
+    tmp -> setNextPtr(NULL);
+    s -> setNextPtr(tmp);
+    back = tmp;
+    num_elements++;
+    
+}
+
+void LinkList::deleteAtFront() {
+    if (front == NULL) {
+        cout  << "out of range";
+        return;
+        
+    }
+    string theString = " ";
+    Node *delPtr = new Node;
+    Node *tmp = new Node;
+    tmp = front;
+    theString = front -> getRecord();
+    front = front -> getNextPtr();
+    delPtr = tmp;
+    free(delPtr);
+    num_elements--;
+    
+}
+
+void LinkList::deleteAtBack() {
+    if (back == NULL) {
+        cout  << "out of range";
+        return;
+        
+    }
+    Node *tmp = new Node();
+    Node *s = front;
+    while (s->getNextPtr() != NULL) {
+        tmp = s;
+        s = s -> getNextPtr();
+    }
+    back = tmp;
+    tmp -> setNextPtr(NULL);
+    free(s);
+    
+    
+    
+    
+    
+    num_elements--;
+}
+
+string LinkList::displayFront() {
+    if (front == NULL) {
+        return "Please add to front first.";
+        
+    }
+    Node*tmp = new Node;
+    tmp = front;
+    
+    return tmp -> getRecord();
+}
+
+
+
+string LinkList::displayBack() {
+    if (back == NULL) {
+        return "Please add to back first.";
+    }
+    Node *tmp = back;
+    
+    return tmp -> getRecord();
+}
+
+string LinkList::displayTheList() {
+    if (front == NULL) {
+        
+        return "List is Empty";
+    }
+    
+    Node *tmp = new Node;
+    tmp = front;
+    
+    while (tmp != NULL) {
+        cout << tmp->getRecord() << "-> ";
+        tmp=tmp->getNextPtr();
+        
+    }
+    if (tmp == NULL) {
+        return "The End";
+    }
+    
+    return tmp -> getRecord();
+}
+
+int LinkList::size() {
+    return num_elements;
+}
+
+bool LinkList::isEmpty() {
+    return front == NULL;
+}
+
+LinkList::~LinkList() {
+    front = NULL;
+    back = NULL;
+}
+
+void LinkList::searchList(int number, string first, string last, float score) {
+    Node *tmp = new Node(number, first, last, score);
+    int counter = 0;
+    tmp = front;
+    stringstream ss;
+    ss << number << ", " << first << " " << last << ", " << score;
+    string theStr = ss.str();
+    while (tmp != NULL) {
+        
+        counter++;
+        if (tmp -> getRecord() == theStr) {
+            cout << "Element " << tmp -> getRecord();
+            cout << " found at position " << counter << endl;
+            return;
+        }
+        tmp = tmp -> getNextPtr();
+        
+        
+    }
+    
+    
+    cout << "Element " << theStr << " not found" << endl;
+}
+
+void LinkList::traverseList(int number, string first, string last, float score) {
+    Node* ptr = new Node(number, first, last, score);
+    Node* cur = front -> getNextPtr();
+    Node *prev = front;
+    
+    while ( cur != NULL && number <= cur->getID() )
+    {
+        cur = cur->getNextPtr();
+        prev = prev->getNextPtr();
+    }
+    if (cur == NULL)
+        prev->setNextPtr(ptr);
+    else
+    {
+        ptr->setNextPtr(cur);
+        prev->setNextPtr(ptr);
+    }
+    num_elements++;
+    
+    
+    
+    
+}
+
+Node* LinkList::getBack() {
+    return back;
+}
+
+Node* LinkList::getFront() {
+    return front;
+}
+void LinkList::PQueue(int number, string first, string last, float score){
+    Node* ptr = new Node(number, first, last, score);
+    Node* cur = front -> getNextPtr();
+    Node *prev = front;
+    
+    while ( cur != NULL && number >= cur->getID() )
+    {
+        cur = cur->getNextPtr();
+        prev = prev->getNextPtr();
+    }
+    if (cur == NULL)
+        prev->setNextPtr(ptr);
+    else
+    {
+        ptr->setNextPtr(cur);
+        prev->setNextPtr(ptr);
+    }
+    num_elements++;
+}
 #endif /* LinkList_hpp */

@@ -10,7 +10,7 @@
 #ifndef Queue_h
 #define Queue_h
 
-#include "LinkList.cpp"
+#include "LinkList.h"
 #include <iostream>
 
 using namespace std;
