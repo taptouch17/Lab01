@@ -27,7 +27,6 @@
 		65121D77203A50B5002BA071 /* Lab001 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab001; sourceTree = BUILT_PRODUCTS_DIR; };
 		65121D7A203A50B6002BA071 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		65121D81203A5146002BA071 /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
-		65121D82203A522F002BA071 /* List.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
 		65121D83203A53BB002BA071 /* stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
 		65121D86203A53FF002BA071 /* LinkList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkList.h; sourceTree = "<group>"; };
 		65121D87203A53FF002BA071 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
@@ -65,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				65121D7A203A50B6002BA071 /* main.cpp */,
-				65121D82203A522F002BA071 /* List.h */,
 				65121D81203A5146002BA071 /* Node.h */,
 				65121D83203A53BB002BA071 /* stack.h */,
 				65027A40203CDEC70067BD0C /* deque.h */,

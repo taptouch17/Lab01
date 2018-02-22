@@ -41,6 +41,7 @@ int main() {
     cout << "And now we clear" << endl;
     
     thePQ.clear();
+    thePQ.display();
     cout << endl;
     
     cout << "This is the Queue: " << endl;
@@ -60,6 +61,7 @@ int main() {
     q.dequeue();
     cout << q.displayQueue() << endl;
     q.clear();
+    q.displayQueue();
     cout << endl;
     
     cout << "Here is a Stack: " << endl;
@@ -78,7 +80,10 @@ int main() {
     theStack.displayStack();
     cout << "Now we clear the stack" << endl;
     theStack.clear();
+    theStack.displayStack();
     cout << endl;
+    
+    
     cout << "Here is the Deque: " << endl;
     DQ.push_back(13, "James", "Harden", 3.5);
     DQ.push_back(13, "Paul", "George", 3.2);
