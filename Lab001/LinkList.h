@@ -29,10 +29,14 @@ public:
     void insertAtPosition(int number, string first, string last, float score, int atPos);
     string displayBack();
     string displayFront();
+    void traverseList(int number, string first, string last, float score);
     void deleteAtFront();
     void deleteAtBack();
     string displayTheList();
     void searchList(int number, string first, string last, float score);
+    Node* getFront();
+    Node* getBack();
+    void PQueue(int number, string first, string last, float score);
     
     LinkList() {
         front = nullptr;
@@ -45,5 +49,6 @@ public:
     int size();
     bool isEmpty();
 };
+
 
 #endif /* LinkList_hpp */

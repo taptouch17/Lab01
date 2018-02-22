@@ -47,7 +47,6 @@ public:
 
 int Queue::size() {
     
-    cout << "The size of the Queue is " << Listt.size() << endl;
     
     return Listt.size();
     
@@ -77,12 +76,12 @@ void Queue::dequeue() {
 
 string Queue::front() {
     
-    cout << "The front of the Queue is: " << Listt.displayFront() << endl;
+   
     return Listt.displayFront();
 }
 
 string Queue::back() {
-    cout << "The front of the Queue is: " << Listt.displayBack() << endl;
+    
     return Listt.displayBack();
 }
 
@@ -92,9 +91,11 @@ void Queue::clear() {
     }
 }
 string Queue::displayQueue() {
-    cout << "The Queue is " << endl;
+    
     
     return Listt.displayTheList();
 }
+
+
 
 #endif /* Queue_hpp */

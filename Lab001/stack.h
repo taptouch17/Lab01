@@ -16,7 +16,7 @@ using namespace std;
 
 class stack {
 private:
-    LinkList List;
+    LinkList Stack;
     
 public:
     bool isEmpty(); // tells us if the stack is empty.
@@ -37,42 +37,42 @@ public:
 
 
 bool stack::isEmpty() {
-    if (List.size() == 0) {
+    if (Stack.size() == 0) {
         return true;
     }
     return false;
 }
 
 int stack::Size() {
-    return List.size();
+    return Stack.size();
 }
 
 string stack::top() {
     cout << "The top of the stack is: ";
-    cout << List.displayFront() << endl;
-    return List.displayFront();
+    cout << Stack.displayFront() << endl;
+    return Stack.displayFront();
 }
 
 void stack::push(int number, string first, string last, float score) {
     
-    if (List.size() == 0) {
-        List.createANode(number, first, last, score);
+    if (Stack.size() == 0) {
+        Stack.createANode(number, first, last, score);
         return;
     }
-    List.addAtFront(number, first, last, score);
+    Stack.addAtFront(number, first, last, score);
     
     
 }
 
 void stack::pop() {
     
-        List.deleteAtFront();
+        Stack.deleteAtFront();
     
 }
 
 void stack::clear() {
-    while (List.size() != 0) {
-        List.deleteAtFront();
+    while (Stack.size() != 0) {
+        Stack.deleteAtFront();
     }
 }
 
@@ -81,10 +81,10 @@ void stack::clear() {
 string stack::displayStack() {
     cout << "The Stack is " << endl;
     
-    return List.displayTheList();
+    return Stack.displayTheList();
 }
 
 void stack::searchStack(int number, string first, string last, float score) {
-    List.searchList(number, first, last, score);
+    Stack.searchList(number, first, last, score);
 }
 #endif /* stack_h */

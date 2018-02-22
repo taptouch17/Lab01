@@ -1,4 +1,4 @@
-//
+;//
 //  main.cpp
 //  Lab001
 //
@@ -10,6 +10,7 @@
 #include "Queue.h"
 #include "stack.h"
 #include "deque.h"
+#include "pQueue.h"
 
 using namespace std;
 
@@ -20,43 +21,80 @@ int main() {
     //List* list = new List();
     Queue q;
     stack theStack;
-    deque DQ;
+    Deque DQ;
+    PQueue thePQ;
     
-    //q.enqueue(1999, "Thomas", "Grant", 3.2);
-    //q.enqueue(1001, "Jelani", "Nicholls", 5.0);
-    //q.enqueue(1919, "ME", "ME", 4.0);
-    //q.searchQueue(1919, "ME", "ME", 4.0);
-    //theStack.push(1999, "Thomas", "Grant", 3.2);
-    //theStack.push(1919, "ME", "ME", 4.0);
-    //theStack.push(1001, "Jelani", "Nicholls", 5.0);
-    //theStack.pop();
-    //theStack.searchStack(1919, "ME", "ME", 4.0);
-    //theStack.top();
-    //theStack.displayStack();
-    //q.dequeue();
-    //q.displayQueue();
-    DQ.push_back(1999, "Thomas", "Grant", 3.2);
-    DQ.push_back(1999, "A", "Grant", 3.2);
-    DQ.push_back(1919, "ME", "ME", 4.0);
-    DQ.push_front(1001, "Jelani", "Nicholls", 5.0);
+    cout << "This is the Priority Queue: " << endl;
+    thePQ.push_back(80, "Bill", "Gates", 3.5);
+    thePQ.push_back(101, "Steve", "Jobs", 4.0);
+    thePQ.push_back(58, "Mark", "Zuckerberg", 2.5);
+    thePQ.push_back(43, "Evan", "Spiegel", 2.5);
+    thePQ.push_back(79, "Tim", "Cook", 3.5);
+    cout << thePQ.display() << endl;
+    cout << "The size of the Priority Queue is: " << thePQ.Size() << endl;
+    
+    cout << "Now we pop from the Priority Queue: " << endl;
+    thePQ.pop_front();
+    cout << thePQ.display() << endl;
+    thePQ.pop_front();
+    cout << thePQ.display() << endl;
+    cout << "And now we clear" << endl;
+    
+    thePQ.clear();
+    cout << endl;
+    
+    cout << "This is the Queue: " << endl;
+    q.enqueue(1999, "Thomas", "Grant", 3.2);
+    q.enqueue(1001, "Timothy", "Gooly", 5.0);
+    q.enqueue(1919, "Kevin", "Hart", 4.0);
+    q.enqueue(2, "Dave", "Chapelle", 0.8);
+    q.displayQueue();
+    cout << endl;
+    cout << "The size of the Queue is: " << q.size() << endl;
+    q.searchQueue(2, "Dave", "Chapelle", 0.8);
+    cout << "The back of the Queue is: " << q.back() << endl;
+    cout << "And the front of the Queue is: " << q.front() << endl;
+    cout << "Now we pop from the Queue: " << endl;
+    q.dequeue();
+    cout << q.displayQueue() << endl;
+    q.dequeue();
+    cout << q.displayQueue() << endl;
+    q.clear();
+    cout << endl;
+    
+    cout << "Here is a Stack: " << endl;
+    
+    theStack.push(10, "Zlatan", "Ibrahimovic", 3.2);
+    theStack.push(7, "Alexis", "Sanchez", 4.0);
+    theStack.push(6, "Paul", "Pogba", 5.0);
+    theStack.push(10, "Lionel", "Messi", 5.0);
+    theStack.push(7, "Cristiano", "Ronaldo", 5.0);
+    theStack.displayStack();
+    theStack.top();
+    cout << "We pop the top: " << endl;
+    theStack.pop();
+    theStack.searchStack(7, "Alexis", "Sanchez", 4.0);
+    theStack.top();
+    theStack.displayStack();
+    cout << "Now we clear the stack" << endl;
+    theStack.clear();
+    cout << endl;
+    cout << "Here is the Deque: " << endl;
+    DQ.push_back(13, "James", "Harden", 3.5);
+    DQ.push_back(13, "Paul", "George", 3.2);
+    DQ.push_back(23, "LeBron", "James", 4.0);
+    DQ.push_front(0, "Russel", "Westbrook", 4.0);
+    DQ.push_front(35, "Kevin", "Durant", 0.9);
+    cout << DQ.display() << endl;
     DQ.begin();
     DQ.pop_back();
-    DQ.insert(50, "Yer", "Mom", 1.5, 2);
+    DQ.pop_front();
+    DQ.insert(30, "Stephan", "Curry", 1.5, 2);
     DQ.begin();
     DQ.end();
     DQ.Size();
     DQ.display();
-    
-    //list->addTail(1999, "Thomas", "Grant", 3.2);
-    //list->addTail(1001, "Annette", "Grey", 2.2);
-    //list->addTail(1875, "Steve", "Alonzo", 3.0);
-    //list->addTail(1555, "Jean", "Steele", 1.8);
-    
-    cout << "\nDisplay List:\n";
-    //cout << list->displayList() << "\n";
-    
-    cout << "\nDisplay Names:\n";
-    //cout << list->displayNames() << "\n";
+    cout << endl;
     
     return 0;
 }

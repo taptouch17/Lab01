@@ -14,7 +14,7 @@
 
 using namespace std;
 
-class deque {
+class Deque {
 private:
     LinkList deque;
     
@@ -37,29 +37,29 @@ public:
 //                   Member functions' definition                            //
 //===========================================================================//
 
-bool deque::isEmpty() {
+bool Deque::isEmpty() {
     if (deque.size() == 0) {
         return true;
     }
     return false;
 }
 
-int deque::Size() {
+int Deque::Size() {
     cout << "the size is " << deque.size() << endl;
     return deque.size();
 }
 
-string deque::begin() {
+string Deque::begin() {
     cout << "the front of the double ended queue is: " << deque.displayFront() << endl;
     return deque.displayFront();
 }
 
-string deque::end() {
+string Deque::end() {
     cout << "the back of the double ended queue is: " << deque.displayBack() << endl;
     return deque.displayBack();
 }
 
-void deque::push_back(int number, string first, string last, float score) {
+void Deque::push_back(int number, string first, string last, float score) {
     if (deque.size() == 0) {
         deque.createANode(number, first, last, score);
         return;
@@ -67,7 +67,7 @@ void deque::push_back(int number, string first, string last, float score) {
     deque.addAtBack(number, first, last, score);
 }
 
-void deque::push_front(int number, string first, string last, float score) {
+void Deque::push_front(int number, string first, string last, float score) {
     if (deque.size() == 0) {
         deque.createANode(number, first, last, score);
         return;
@@ -75,24 +75,24 @@ void deque::push_front(int number, string first, string last, float score) {
     deque.addAtFront(number, first, last, score);
 }
 
-void deque::pop_front() {
+void Deque::pop_front() {
      deque.deleteAtFront();
 }
 
-void deque::pop_back() {
+void Deque::pop_back() {
     deque.deleteAtBack();
 }
 
-void deque::insert(int number, string first, string last, float score, int atPos) {
+void Deque::insert(int number, string first, string last, float score, int atPos) {
     deque.insertAtPosition(number, first, last, score, atPos);
     
 }
 
-string deque::display() {
+string Deque::display() {
     return deque.displayTheList();
 }
 
-void deque::clear() {
+void Deque::clear() {
     while (deque.size() != 0) {
         deque.deleteAtFront();
     }

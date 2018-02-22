@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		65AECF16203B9AB000D74992 /* Queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65121D85203A53FF002BA071 /* Queue.cpp */; };
 		65AECF17203B9AB600D74992 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65121D7A203A50B6002BA071 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -31,9 +30,9 @@
 		65121D82203A522F002BA071 /* List.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
 		65121D83203A53BB002BA071 /* stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
 		65121D84203A53FF002BA071 /* LinkList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinkList.cpp; sourceTree = "<group>"; };
-		65121D85203A53FF002BA071 /* Queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Queue.cpp; sourceTree = "<group>"; };
 		65121D86203A53FF002BA071 /* LinkList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkList.h; sourceTree = "<group>"; };
 		65121D87203A53FF002BA071 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
+		651ECF20203F1AC100F6825B /* pQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pQueue.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +72,7 @@
 				65027A40203CDEC70067BD0C /* deque.h */,
 				65121D84203A53FF002BA071 /* LinkList.cpp */,
 				65121D86203A53FF002BA071 /* LinkList.h */,
-				65121D85203A53FF002BA071 /* Queue.cpp */,
+				651ECF20203F1AC100F6825B /* pQueue.h */,
 				65121D87203A53FF002BA071 /* Queue.h */,
 			);
 			path = Lab001;
@@ -137,7 +136,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				65AECF17203B9AB600D74992 /* main.cpp in Sources */,
-				65AECF16203B9AB000D74992 /* Queue.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

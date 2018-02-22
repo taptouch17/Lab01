@@ -8,7 +8,7 @@
 
 
 
-//#include <sstream>
+
 #include <iostream>
 #include "LinkList.h"
 
@@ -45,21 +45,6 @@ void LinkList::createANode(int number, string first, string last, float score) {
     num_elements++;
 }
 
-/*
-void LinkList::createABackNode(int number, string first, string last, float score) {
-    Node *tmp = new Node(number, first, last, score);
-    
-    
-    if (back == NULL) {
-        back = tmp;
-        back -> setNextPtr(nullptr);
-    }
-    else {
-        back -> setNextPtr(tmp);
-        back = tmp;
-    }
-}
-*/
 
 void LinkList::insertAtPosition(int number, string first, string last, float score, int atPos) {
     Node *tmp = new Node(number, first, last, score);
@@ -156,6 +141,8 @@ string LinkList::displayFront() {
     return tmp -> getRecord();
 }
 
+
+
 string LinkList::displayBack() {
     if (back == NULL) {
         throw out_of_range("Please add to back of Queue first.");
@@ -167,20 +154,20 @@ string LinkList::displayBack() {
 
 string LinkList::displayTheList() {
     if (front == NULL) {
-        cout << "List is Empty";
+        
         return "List is Empty";
     }
     
     Node *tmp = new Node;
     tmp = front;
-    cout << "Link list: " << endl;
+    
     while (tmp != NULL) {
         cout << tmp->getRecord() << "-> ";
         tmp=tmp->getNextPtr();
         
     }
     if (tmp == NULL) {
-        return "done";
+        return "The End";
     }
     
    return tmp -> getRecord();
@@ -221,4 +208,52 @@ void LinkList::searchList(int number, string first, string last, float score) {
     
     
     cout << "Element " << theStr << " not found" << endl;
+}
+
+void LinkList::traverseList(int number, string first, string last, float score) {
+    Node* ptr = new Node(number, first, last, score);
+    Node* cur = front -> getNextPtr();
+    Node *prev = front;
+    
+    while ( cur != NULL && number <= cur->getID() )
+    {
+        cur = cur->getNextPtr();
+        prev = prev->getNextPtr();
+    }
+    if (cur == NULL)
+        prev->setNextPtr(ptr);
+    else
+    {
+        ptr->setNextPtr(cur);
+        prev->setNextPtr(ptr);
+    }
+    num_elements++;
+    
+    
+    
+    
+}
+
+Node* LinkList::getFront() {
+    return front;
+}
+
+void LinkList::PQueue(int number, string first, string last, float score){
+    Node* ptr = new Node(number, first, last, score);
+    Node* cur = front -> getNextPtr();
+    Node *prev = front;
+    
+    while ( cur != NULL && number >= cur->getID() )
+    {
+        cur = cur->getNextPtr();
+        prev = prev->getNextPtr();
+    }
+    if (cur == NULL)
+        prev->setNextPtr(ptr);
+    else
+    {
+        ptr->setNextPtr(cur);
+        prev->setNextPtr(ptr);
+    }
+    num_elements++;
 }
